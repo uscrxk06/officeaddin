@@ -55,7 +55,7 @@
     <Host Name="Presentation"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://dclbblobdevwebsite.blob.core.windows.net/dclbofficeaddin/DCLB_Office_Addin.html"/>
+    <SourceLocation DefaultValue="https://cdn.jsdelivr.net/gh/uscrxk06/officeaddin/Office_Addin.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -186,8 +186,8 @@
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://dclbblobdevwebsite.blob.core.windows.net/dclbofficeaddin/DCLB_More_Info.html"/>
-        <bt:Url id="Commands.Url" DefaultValue="https://dclbblobdevwebsite.blob.core.windows.net/dclbofficeaddin/DCLB_Office_Addin.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://dclbblobdevwebsite.blob.core.windows.net/dclbofficeaddin/DCLB_Office_Addin.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://cdn.jsdelivr.net/gh/uscrxk06/officeaddin/Office_Addin.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://cdn.jsdelivr.net/gh/uscrxk06/officeaddin/Office_Addin.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with document collaboration!"/>
