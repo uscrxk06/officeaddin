@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Office Add-In </title>
+
+    <script src="https://test.docucollab.com/_static/SCRIPTS/jquery-3.1.1.min.js"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <script src="https://test.docucollab.com/Add-ins/Home.js" type="text/javascript"></script>
+    <link href="https://test.docucollab.com/Add-ins/Home.css" rel="stylesheet" type="text/css" />
+    <!--<link href="../Content/Button.css" rel="stylesheet" type="text/css" />-->
+
+
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css">
+
+        <link rel="stylesheet" media="screen" href="https://test.docucollab.com/_static/STYLES/font-awesome.min.css">
+        <link rel="stylesheet" media="screen" href="https://test.docucollab.com/_static/STYLES/Chat/style.css">
+
+        <link rel="stylesheet" href="https://test.docucollab.com/_static/STYLES/bootstrap.min.css">
+        <link rel="stylesheet" href="https://test.docucollab.com/_static/STYLES/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://test.docucollab.com/_static/STYLES/simple-sidebar.css">
+    <script>
+
+       
+        function redirectToWordAddinPage() {
+            //debugger;
+            const currentLocation = window.location;
+			let inAllowedDomainFlag = false;
+			
+            if (currentLocation.ancestorOrigins && currentLocation.ancestorOrigins.length) {
+                for (var i = 0; i < currentLocation.ancestorOrigins.length; i++) {
+                    if (
+                           (currentLocation.ancestorOrigins[i].includes("docucollab.com"))
+                        || (currentLocation.ancestorOrigins[i].includes("reviewwith.me"))
+                        || (currentLocation.ancestorOrigins[i].includes("appsmicro.com"))
+                    )
+                    {
+						inAllowedDomainFlag = true;
+                        var urlstring = currentLocation.ancestorOrigins[i] + "/WordAddIns.aspx";
+                        window.location.replace(urlstring);
+                        break;
+                    }
+                  
+                }
+            }
+            else {
+                var urlstring2 = "https://" + window.location.host.toString() + "/WordAddIns.aspx";
+               
+                window.location.replace("https://release.docucollab.com/WordAddIns.aspx");
+            }
+			
+			if (!inAllowedDomainFlag)
+			{
+			window.location.replace("https://release.docucollab.com/WordAddIns.aspx");
+			}
+        };
+
+        window.addEventListener("load", function () {
+            redirectToWordAddinPage();
+        });
+       
+    </script>
+</head>
+
+<body>
+    <div id="xx">
+        <div class="padding">
+                           <h1>
+                    <a href="http://docucollab.com/" style="width: 100%;">
+                        <img class="text-center" src="https://test.docucollab.com/newlogin/images/logo%20(2).png?crc=4286861472" alt="" style="display: block; margin: auto;padding:5px">
+                    </a>
+                </h1>
+                        <h1 class="text-center" style="padding-top:0px">DocuCollab</h1>
+            <h2 class="text-center" style="padding-top:20px">Accelerate Documents</h2>
+            
+                                         <h5 style="margin-left:5px; padding-top:20px">Standardize your content library </h5>
+                                         <h5 style="margin-left:5px;padding-top:4px">Implement custom document workflow</h5>
+                                         <h5 style="margin-left:5px; padding-top:4px">Automate your document centric processes </h5>
+
+            <div class="text-center" style="padding-top:20px">
+                                        <button id="ajaxlogin_submit"  onclick="javascript:redirectToWordAddinPage();" class="btn btn-lg btn-primary" type="submit"> Get Started </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
